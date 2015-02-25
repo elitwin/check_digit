@@ -23,11 +23,11 @@ Each implementation provides the same 2 class methods:
 * valid?(num) - returns true if the number has a valid checksum digit, false if the number has an invalid checksum digit
 
 Code sample:
-require 'check_digit'
+    require 'check_digit'
 
-Damm.checksum(123) # returns 1234
-Damm.valid?(1234) # returns true
-Damm.valid?(1239) # returns false
+    Damm.checksum(123) # returns 1234
+    Damm.valid?(1234) # returns true
+    Damm.valid?(1239) # returns false
 
 ## Contributing
 
