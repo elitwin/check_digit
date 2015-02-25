@@ -34,5 +34,27 @@ module CheckDigit
       expect(Verhoeff.valid?(9998)).to be true
       expect(Verhoeff.valid?(9999)).to be false
     end
+
+    it "benchmarks performance (#{BMITERS} iterations)" do
+      puts '  ' + '-' * 55
+      Benchmark.bm(10) do |x|
+        x.report("  generate:") {
+          i = BMITERS
+          while i > 1
+            Verhoeff.checksum(i)
+            i-=1
+          end
+        }
+
+        x.report("  validate:") {
+          i = BMITERS
+          while i > 1
+            Verhoeff.valid?(i)
+            i-=1
+          end
+        }
+      end
+      puts '  ' + '-' * 55
+    end
   end
 end

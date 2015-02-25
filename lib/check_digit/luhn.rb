@@ -1,16 +1,16 @@
 module CheckDigit::Luhn
   def self.checksum(num)
     CheckDigit::Util.valid_arg(num)
-    num.to_i * 10 + checksum_digit(num)
+    num.to_i * 10 + calc(num)
   end
 
   def self.valid?(num)
     CheckDigit::Util.valid_arg(num)
-    checksum_digit(num.to_s[0..-2]) == num % 10
+    calc(num.to_s[0..-2]) == num % 10
   end
 
   private
-  def self.checksum_digit(num)
+  def self.calc(num)
     digits = num.to_s.reverse.scan(/\d/).map { |x| x.to_i }
     digits = digits.each_with_index.map { |d, i|
       d *= 2 if i.even?

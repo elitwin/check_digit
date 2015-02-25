@@ -10,20 +10,20 @@ module CheckDigit::Damm
        [8, 9, 4, 5, 3, 6, 2, 0, 1, 7],
        [9, 4, 3, 8, 6, 1, 7, 2, 0, 5],
        [2, 5, 8, 1, 4, 3, 6, 7, 9, 0]
-      ]
+      ].freeze
 
   def self.checksum(num)
     CheckDigit::Util.valid_arg(num)
-    num.to_i * 10 + checksum_digit(num)
+    num.to_i * 10 + calc(num)
   end
 
   def self.valid?(num)
     CheckDigit::Util.valid_arg(num)
-    checksum_digit(num.to_s[0..-2]) == num % 10
+    calc(num.to_s[0..-2]) == num % 10
   end
 
   private
-  def self.checksum_digit(num)
+  def self.calc(num)
     num.to_s.each_char.inject(0) {|m,v|
       D[m][v.to_i].to_i
     }

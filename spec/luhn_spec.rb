@@ -34,5 +34,27 @@ module CheckDigit
       expect(Luhn.valid?(9993)).to be true
       expect(Luhn.valid?(9999)).to be false
     end
+
+    it "benchmarks performance (#{BMITERS} iterations)" do
+      puts '  ' + '-' * 55
+      Benchmark.bm(10) do |x|
+        x.report("  generate:") {
+          i = BMITERS
+          while i > 1
+            Luhn.checksum(i)
+            i-=1
+          end
+        }
+
+        x.report("  validate:") {
+          i = BMITERS
+          while i > 1
+            Luhn.valid?(i)
+            i-=1
+          end
+        }
+      end
+      puts '  ' + '-' * 55
+    end
   end
 end

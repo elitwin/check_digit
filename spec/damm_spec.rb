@@ -31,5 +31,27 @@ module CheckDigit
       expect(Damm.valid?(9990)).to be true
       expect(Damm.valid?(9999)).to be false
     end
+
+    it "benchmarks performance (#{BMITERS} iterations)" do
+      puts '  ' + '-' * 55
+      Benchmark.bm(10) do |x|
+        x.report("  generate:") {
+          i = BMITERS
+          while i > 1
+            Damm.checksum(i)
+            i-=1
+          end
+        }
+
+        x.report("  validate:") {
+          i = BMITERS
+          while i > 1
+            Damm.valid?(i)
+            i-=1
+          end
+        }
+      end
+      puts '  ' + '-' * 55
+    end
   end
 end

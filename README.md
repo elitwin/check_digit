@@ -18,7 +18,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Each implementation provides the same 2 class methods:
+* checksum(num) - returns a new number with the checksum digit appended at the end
+* valid?(num) - returns true if the number has a valid checksum digit, false if the number has an invalid checksum digit
+
+Code sample:
+require 'check_digit'
+
+Damm.checksum(123) # returns 1234
+Damm.valid?(1234) # returns true
+Damm.valid?(1239) # returns false
 
 ## Contributing
 
@@ -27,3 +36,6 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Attributions
+The Verhoeff implementation was provided from this repo(https://github.com/bai/verhoeff) and was the inspiration for the interface (checksum, valid?)used by all the implementations
