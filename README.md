@@ -39,4 +39,4 @@ Code sample:
 5. Create a new Pull Request
 
 ## Attributions
-The Verhoeff implementation was provided from this repo(https://github.com/bai/verhoeff) and was the inspiration for the interface (checksum, valid?)used by all the implementations
+The Verhoeff implementation was provided from this repo (https://github.com/bai/verhoeff) and was the inspiration for the interface (checksum, valid?) used by all the implementations
