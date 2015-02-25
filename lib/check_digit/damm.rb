@@ -24,8 +24,8 @@ module CheckDigit::Damm
 
   private
   def self.calc(num)
-    num.to_s.each_char.inject(0) {|m,v|
-      D[m][v.to_i].to_i
-    }
+    i = 0
+    num.to_s.each_char {|c| i = D[i][c.to_i] }
+    i
   end
 end
