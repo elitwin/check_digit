@@ -23,6 +23,7 @@ Each implementation provides the same 2 class methods:
 * valid?(num) - returns true if the number has a valid checksum digit, false if the number has an invalid checksum digit
 
 Code sample:
+
     require 'check_digit'
 
     Damm.checksum(123) # returns 1234
