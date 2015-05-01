@@ -1,6 +1,9 @@
-# CheckDigit [![Gem Version](https://badge.fury.io/rb/check_digit.svg)](http://badge.fury.io/rb/check_digit)
+# CheckDigit
 
 Ruby implementation of the Luhn, Damm and Verhoeff check digit algorithms
+
+* [![Gem Version](https://badge.fury.io/rb/check_digit.svg)](http://badge.fury.io/rb/check_digit) is the latest released version
+* For the version under development (master), check [version.rb](https://github.com/elitwin/check_digit/blob/master/lib/check_digit/version.rb)
 
 ## Installation
 
