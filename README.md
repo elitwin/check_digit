@@ -30,10 +30,9 @@ Code sample:
     Damm.valid?(1234) # returns true
     Damm.valid?(1239) # returns false
 
-## Algorithm Comparison
-#### Ability to Prevent Common Errors
+## Algorithm Comparison - Error Prevention
 | Error Type                                 | % of All Errors | Luhn | Damm | Verhoeff |
-| :----------------------------------------- |:--------------- |:----:|:----:|:--------:|
+|:-----------------------------------------  |:--------------- |:----:|:----:|:--------:|
 | single errors: a becomes b                 | 60% to 95%      |  1   |  1   |     1    |
 | omitting or adding a digit                 | 10% to 20%      |  1   |  1   |     1    |
 | adjacent transpositions: *ab* becomes *ba* | 10% to 20%      |  2   |  1   |     1    |
@@ -51,6 +50,17 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 2. Prevents most errors
 3. Prevents some errors
 4. Does not prevent any errors
+
+## Algorithm Comparison - Performance
+#####50,000 iterations (time in seconds)
+
+| Algorithm | Generate | Validate |
+|:--------- | --------:| --------:|
+| Luhn      | 6.630000 | 6.390000 |
+| Damm      | 1.700000 | 1.610000 |
+| Verhoeff  | 3.730000 | 3.720000 |
+
+* Test was on Linux 10.04 with 2.80GHz Intel Xeon E5-1603 - relative timing is more important to consider
 
 ## Contributing
 
