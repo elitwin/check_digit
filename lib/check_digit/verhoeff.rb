@@ -1,4 +1,15 @@
 module CheckDigit::Verhoeff
+  def self.checksum(num)
+    CheckDigit::Util.valid_arg(num)
+    num.to_i * 10 + calc(num)
+  end
+
+  def self.valid?(num)
+    CheckDigit::Util.valid_arg(num)
+    calc(num.to_s[0..-2]) == num % 10
+  end
+
+  private
   D = [
        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
        [1, 2, 3, 4, 0, 6, 7, 8, 9, 5],
@@ -27,17 +38,6 @@ module CheckDigit::Verhoeff
 
   ZERO_ORDINAL = 48 # '0'.each_byte.first on 1.8 or '0'.ord on 1.9
 
-  def self.checksum(num)
-    CheckDigit::Util.valid_arg(num)
-    num.to_i * 10 + calc(num)
-  end
-
-  def self.valid?(num)
-    CheckDigit::Util.valid_arg(num)
-    calc(num.to_s[0..-2]) == num % 10
-  end
-
-  private
   def self.calc(num)
     INV[num.to_s.each_byte.reverse_each.with_index.inject(0) { |check,(x,i)|
           D[check][P[i.next % 8][x - ZERO_ORDINAL]]

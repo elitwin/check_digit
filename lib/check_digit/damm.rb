@@ -1,4 +1,15 @@
 module CheckDigit::Damm
+  def self.checksum(num)
+    CheckDigit::Util.valid_arg(num)
+    num.to_i * 10 + calc(num)
+  end
+
+  def self.valid?(num)
+    CheckDigit::Util.valid_arg(num)
+    calc(num.to_s[0..-2]) == num % 10
+  end
+
+  private
   D = [
        [0, 3, 1, 7, 5, 9, 8, 6, 4, 2],
        [7, 0, 9, 2, 1, 5, 4, 8, 6, 3],
@@ -12,17 +23,6 @@ module CheckDigit::Damm
        [2, 5, 8, 1, 4, 3, 6, 7, 9, 0]
       ].freeze
 
-  def self.checksum(num)
-    CheckDigit::Util.valid_arg(num)
-    num.to_i * 10 + calc(num)
-  end
-
-  def self.valid?(num)
-    CheckDigit::Util.valid_arg(num)
-    calc(num.to_s[0..-2]) == num % 10
-  end
-
-  private
   def self.calc(num)
     i = 0
     num.to_s.each_char {|c| i = D[i][c.to_i] }
