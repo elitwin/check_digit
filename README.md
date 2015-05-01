@@ -52,7 +52,7 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 4. Does not prevent any errors
 
 ## Algorithm Comparison - Performance
-#####50,000 iterations (time in seconds)
+#####50,000 iterations (time in seconds)*
 
 | Algorithm | Generate | Validate |
 |:--------- | --------:| --------:|
@@ -60,7 +60,7 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 | Damm      | 1.700000 | 1.610000 |
 | Verhoeff  | 3.730000 | 3.720000 |
 
-* Test was on Linux 10.04 with 2.80GHz Intel Xeon E5-1603 - relative timing is more important to consider
+\* Test was on Linux 10.04 with 2.80GHz Intel Xeon E5-1603 - relative timing is more important to consider
 
 ## Contributing
 
