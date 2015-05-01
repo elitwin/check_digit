@@ -1,4 +1,4 @@
-# CheckDigit
+# CheckDigit [![Gem Version](https://badge.fury.io/rb/check_digit.svg)](http://badge.fury.io/rb/check_digit)
 
 Ruby implementation of the Luhn, Damm and Verhoeff check digit algorithms
 
