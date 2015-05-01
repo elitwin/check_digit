@@ -30,6 +30,28 @@ Code sample:
     Damm.valid?(1234) # returns true
     Damm.valid?(1239) # returns false
 
+## Algorithm Comparison
+#### Ability to Prevent Common Errors
+| Error Type                                 | % of All Errors | Luhn | Damm | Verhoeff |
+| :----------------------------------------- |:--------------- |:----:|:----:|:--------:|
+| single errors: a becomes b                 | 60% to 95%      |  1   |  1   |     1    |
+| omitting or adding a digit                 | 10% to 20%      |  1   |  1   |     1    |
+| adjacent transpositions: *ab* becomes *ba* | 10% to 20%      |  2   |  1   |     1    |
+| twin errors: *aa* becomes *bb*             | 0.5% to 1.5%    |  3   |  1   |     2    |
+| jump transpositions: *acb* becomes *bca*   | 0.5% to 1.5%    |  2   |  1   |     2    |
+| jump twin errors: *aca* becomes *bcb*      | below 1%        |  1   |  1   |     2    |
+| phonetic errors: *a0* becomes *0a*         | 0.5% to 1.5%    |  1*  |  1   |     2    |
+
+Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
+
+\* Not entirely sure if Luhn catches all phonetic errors, e.g. 13 instead of 30
+
+#####*Legend*
+1. Prevents all errors
+2. Prevents most errors
+3. Prevents some errors
+4. Does not prevent any errors
+
 ## Contributing
 
 1. Fork it ( https://github.com/elitwin/check_digit/fork )
