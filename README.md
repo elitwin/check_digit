@@ -55,7 +55,7 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 4. Does not prevent any errors
 
 ## Algorithm Comparison - Performance
-#####50,000 iterations (time in seconds)*
+#####50,000 iterations (time in seconds - higher is better)*
 
 | Algorithm | Generate | Validate |
 |:--------- | --------:| --------:|
