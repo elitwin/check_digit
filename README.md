@@ -59,11 +59,11 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 
 | Algorithm | Generate | Validate |
 |:--------- | --------:| --------:|
-| Luhn      | 6.630000 | 6.390000 |
-| Damm      | 1.700000 | 1.610000 |
-| Verhoeff  | 3.730000 | 3.720000 |
+| Luhn      | 5.163268 | 5.085513 |
+| Damm      | 1.001179 | 0.996764 |
+| Verhoeff  | 2.496255 | 2.471240 |
 
-\* Test was on Linux 14.04 with 2.80GHz Intel Xeon E5-1603 - relative timing is more important to consider when comparing performance
+\* Test was on Linux 16.04 with 2.80GHz Intel Xeon E5-1603 using Ruby 2.4.1
 
 ## Contributing
 
