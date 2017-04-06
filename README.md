@@ -48,14 +48,14 @@ Source: http://www.augustana.ab.ca/~mohrj/algorithms/checkdigit.html
 
 \* Not entirely sure if Luhn catches all phonetic errors, e.g. 13 instead of 30
 
-#####*Legend*
+###*Legend*
 1. Prevents all errors
 2. Prevents most errors
 3. Prevents some errors
 4. Does not prevent any errors
 
 ## Algorithm Comparison - Performance
-#####50,000 iterations (time in seconds - higher is better)*
+###50,000 iterations (time in seconds - lower is better)*
 
 | Algorithm | Generate | Validate |
 |:--------- | --------:| --------:|
